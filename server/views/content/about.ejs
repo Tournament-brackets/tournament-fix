@@ -1,0 +1,94 @@
+<% include ../partials/header.ejs %>
+
+  <!-- MAIN CONTENT -->
+   <!--Benzir Ahmed-->
+  <div class="container">
+    <div class="row">
+      <h1>
+        <%= title %> Me
+      </h1>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false"
+                aria-controls="collapseOne"> About Me</a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              Name: Benzir Ahmed <br> Age: 25 years old.<br> Location: Toronto, ON, Canada 
+              <br> Ethnicity: Bengali<br> Current programming languages: C++, C, C#, Java, Node.js, .Net<br>
+              Developer Platforms(IDE): Visual Studio, Visual Studio Code, Eclipse, Android Studio, Unity, Unreal<br>
+              Cloud services: Microsoft Azure, Heroku, Google Cloud <br>
+              <br>
+              
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                aria-controls="collapseTwo">
+                Education
+                </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              McMaster University, Hamilton, On 2009-2014<br>
+            •	Bachelors of Chemical Engineering, Specialization in Bio-Engineering<br>    
+            Centennial Collage, Scarborough, On 2014-2017<br>
+            •	Diploma in Software Engineering technology                           expecting to graduate in 2017-April
+
+              <br>
+              
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                aria-controls="collapseThree">
+                Hobbies
+                </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              <h2>Games</h2>
+              <p>
+                I play all kinds of games on mobile and PC.
+                <br>
+                
+                <h4>Mobile games:</h4>
+                <li>Boom Beach</li>
+                <li>Clash Royale</li>
+                <li>Tower Defense: Infinite War</li>
+                <br>
+                
+                <h4>PC Games</h4>
+                <li>StarCraft</li>
+                <li>OverWatch</li>
+                <li>and ton of games on <a href="http://steamcommunity.com/id/lalluin/games/?tab=all">Steam!</a></li>
+                <h2>Outdoors</h2> 
+                <br>
+                Some Outdoor activites I enjoy:
+                <li>Biking</li>
+                <li>Hiking</li>
+                <li>Camping</li>
+                <li>snorkeling</li>
+                <li>Sking</li>
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <% include ../partials/footer.ejs %>

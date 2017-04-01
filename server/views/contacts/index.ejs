@@ -1,0 +1,50 @@
+<% include ../partials/header.ejs %>
+    <!--Benzir Ahmed-->
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <h3>Business Contact List </h3>
+          <a href="/contacts/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a contact</a>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr>
+                  <th class="text-center">Name</th>
+                  <th class="text-center">Phone</th>
+                  <th class="text-center">Email</th>
+                  <th class="text-center"></th>
+                  <th class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody id="myTable">
+                <!-- Template Row -->
+                <% for (let count = 0; count < contacts.length; count++) { %>
+                <tr>
+                  <td class="text-center"><%= contacts[count].Name %></td>
+                  <td class="text-center"><%= contacts[count].Phone %></td>
+                  <td class="text-center"><%= contacts[count].Email %></td>
+                  <td class="text-center">
+                  <a href="/contacts/<%= contacts[count]._id %>" class="btn btn-primary">
+                  <i class="fa fa-pencil-square-o"></i> Update</a>
+                  </td>
+                  <td class="text-center">
+                  <a href="/contacts/delete/<%= contacts[count]._id %>" class="btn btn-danger">
+                  <i class="fa fa-trash-o"></i> Delete</a>
+                  </td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+           <div class="col-md-offset-1 col-md-10 text-center">
+            <ul class="pagination pagination-lg pager" id="myPager"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<% include ../partials/footer.ejs %>
+
+
