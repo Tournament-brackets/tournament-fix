@@ -21,7 +21,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><i class="fa fa-rebel"></i> Benzir Ahmed</a>
+      <a class="navbar-brand" href="/"><i class="fa fa-trophy"></i> Tounament Fix!</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,31 +33,15 @@
           <li><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
         <% } %>
 
-         <% if(title == "About") { %>
-          <li class="active"><a href="/"><i class="fa fa-male fa-lg"></i> About</a></li>
-        <% } else { %>
-          <li><a href="/about"><i class="fa fa-male fa-lg"></i> About</a></li>
-        <% } %>
-
-         <% if(title == "Projects") { %>
-          <li class="active"><a href="/"><i class="fa fa-book fa-lg"></i> Projects</a></li>
-        <% } else { %>
-          <li><a href="/projects"><i class="fa fa-book fa-lg"></i> Projects</a></li>
-        <% } %>
-
-        <% if(title == "Services") { %>
-          <li class="active"><a href="/"><i class="fa fa-legal fa-lg"></i> Services</a></li>
-        <% } else { %>
-          <li><a href="/services"><i class="fa fa-legal fa-lg"></i> Services</a></li>
-        <% } %>
+   
 
         <% if(typeof displayName == 'string' && displayName) { %>
-          <% if(title == "Contacts") { %>
-          <li class="active"><a href="/contacts"><i class="fa fa-address-card">
-          </i> Business Contacts List</a></li>
+          <% if(title == "Brackets") { %>
+          <li class="active"><a href="/contacts"><i class="fa fa-list-ul">
+          </i> Brackets List</a></li>
           <% } else { %>
-            <li><a href="/contacts"><i class="fa fa-address-card">
-            </i> Business Contacts List</a></li>
+            <li><a href="/contacts"><i class="fa fa-list-ul">
+            </i> Brackets List</a></li>
           <% } %>
         <% } %>
 
