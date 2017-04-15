@@ -53,6 +53,7 @@ $(document).ready(function () {
             $(this).children(".competitor-seed").html(i + 1);
         });
     });
+    //adding competitor
     $("#add_competitor").click( function(e) {
         e.preventDefault(); // Ensure it is only this code that runs
         add_competitor($("#competitor_name").val());
