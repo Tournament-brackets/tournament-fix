@@ -1,7 +1,11 @@
 /* Custom CSS goes here */
 body {
   padding-bottom: 70px;
-  }
+    background-image: url("Assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
 /*nav bar css*/
 .navbar-default {
   background-color: #666aa6;
