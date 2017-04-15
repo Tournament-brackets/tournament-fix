@@ -33,29 +33,7 @@ router.get('/', (req, res, next) => {
 	 });
 });
 
-router.get('/about', (req, res, next) => {
-	res.render('content/about', {
-	title: 'About',
-	contacts: '',
-	displayName: req.user ? req.user.displayName: ''
-	});
-});
 
-router.get('/projects', (req, res, next) => {
-	res.render('content/projects', {
-	title: 'Projects',
-	contacts: '',
-	displayName: req.user ? req.user.displayName: ''
-	});
-});
-
-router.get('/services', (req, res, next) => {
-	res.render('content/services', {
-	title: 'Services',
-	contacts: '',
-	displayName: req.user ? req.user.displayName: ''
-	});
-});
 
 router.get('/contact', (req, res, next) => {
 	res.render('content/contact', {
