@@ -1,7 +1,8 @@
 let mongoose = require('mongoose');
 
+
 function build_bracket(tourney_type, tourney_seeds, competitors, winners, losers) {
-    'use strict';
+    //'use strict';
     winners = (winners === undefined) ? {} : winners;
     losers = (losers === undefined) ? {} : losers;
     
@@ -23,6 +24,7 @@ function build_bracket(tourney_type, tourney_seeds, competitors, winners, losers
         }
         return connector_html;
     }
+}
     
     function matchup_member(game_num, outcome, outcome_num) {
         var $matchup_member = $("<tr class='matchup-member loser-bracket-member'><td class='seed'></td><td class='name'></td><td class='advance-competitor'><button><span class='glyphicon glyphicon-arrow-right'></span></button></td></tr>"),
@@ -35,8 +37,10 @@ function build_bracket(tourney_type, tourney_seeds, competitors, winners, losers
         }
         return $matchup_member;
     }
-    
-    function loser_bracket_html(byes, rounds, seed, slots, pos) {
+
+
+
+  function loser_bracket_html(byes, rounds, seed, slots, pos) {
         if (rounds > 0) {
             seed = (seed === undefined) ? 1 : seed;
             slots = (slots === undefined) ? [1] : slots;
@@ -280,10 +284,10 @@ function build_bracket(tourney_type, tourney_seeds, competitors, winners, losers
         $('#bracket_view').show().removeClass("hidden");
         $('#bracket_setup').hide();
     }
-}
+
 
 function advance_competitor($this) {
-    'use strict';
+    //'use strict';
     var game = $this.data("game"),
         $loser_competitor = $this.siblings("tr.competitor[data-game='" + game + "']");
     
@@ -303,5 +307,6 @@ function advance_competitor($this) {
         $loser_competitor.addClass("loser").removeClass("winner");
     }
 }
+
 
 exports.braketv2 = mongoose.model('braketv2', bracketv2Schema);

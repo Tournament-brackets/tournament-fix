@@ -9,6 +9,10 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+/*var fs = require('fs');
+eval(fs.readFileSync('/models/build_bracket.js')+'');
+var ds = require('ds');
+eval(ds.readFileSync('/models/bracketv2.js')+'');*/
 
 // modules for authentication
 let session = require('express-session');
@@ -33,6 +37,8 @@ db.once('open', () => {
 // define routers
 let index = require('./routes/index'); // top level routes
 let contacts = require('./routes/contacts'); // routes for contacts
+//let bracketlist = require('./routes/bracketlist');
+
 
 
 let app = express();
@@ -64,6 +70,7 @@ app.use(passport.session());
 // route redirects
 app.use('/', index);
 app.use('/contacts', contacts);
+//app.use('/bracketlist', bracketlist);
 
 // Passport User Configuration
 let UserModel = require('./models/users');

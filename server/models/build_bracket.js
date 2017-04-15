@@ -9,7 +9,7 @@ function add_competitor(name) {
 }
 
 $(document).ready(function () {
-    'use strict';
+    //'use strict';
     $("body").on("dblclick", ".matchup-member.competitor", function () {
         advance_competitor($(this));
     }).on("mousedown", ".matchup-member.competitor", function (e) {
