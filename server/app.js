@@ -9,10 +9,24 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+//var $ = require('jquery');
+//var jsdom = require('jsdom');
 /*var fs = require('fs');
 eval(fs.readFileSync('/models/build_bracket.js')+'');
 var ds = require('ds');
 eval(ds.readFileSync('/models/bracketv2.js')+'');*/
+
+/*jsdom.env({
+  url: "http://news.ycombinator.com/",
+  scripts: ["http://code.jquery.com/jquery.js"],
+  done: function (err, window) {
+    var $ = window.$;
+    console.log("HN Links");
+    $("td.title:not(:last) a").each(function() {
+      console.log(" -", $(this).text());
+    });
+  }
+});*/
 
 // modules for authentication
 let session = require('express-session');

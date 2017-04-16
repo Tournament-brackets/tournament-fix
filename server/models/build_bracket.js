@@ -1,4 +1,5 @@
 let mongoose = require('mongoose');
+module.exports = build_bracket;
 
 function add_competitor(name) {
     if (name !== "" && name !== undefined) {
@@ -9,7 +10,7 @@ function add_competitor(name) {
 }
 
 $(document).ready(function () {
-    //'use strict';
+    'use strict';
     $("body").on("dblclick", ".matchup-member.competitor", function () {
         advance_competitor($(this));
     }).on("mousedown", ".matchup-member.competitor", function (e) {

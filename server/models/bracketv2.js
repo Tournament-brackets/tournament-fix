@@ -1,6 +1,5 @@
 let mongoose = require('mongoose');
 
-
 function build_bracket(tourney_type, tourney_seeds, competitors, winners, losers) {
     //'use strict';
     winners = (winners === undefined) ? {} : winners;
