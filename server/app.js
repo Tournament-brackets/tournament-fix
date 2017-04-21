@@ -66,7 +66,7 @@ app.use(passport.session());
 // route redirects
 app.use('/', index);
 app.use('/contacts', contacts);
-//app.use('/bracketlist', bracketlist);
+
 
 // Passport User Configuration
 let UserModel = require('./models/users');

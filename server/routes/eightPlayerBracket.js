@@ -37,7 +37,7 @@ router.get('/tourney', requireAuth, (req, res, next) => {
 /* GET tourney page. */
 router.get('/eightman', requireAuth, (req, res, next) => {
     res.render('content/eightman', {
-        title: '8Man Tourney',
+        title: '8 player Tournament',
         username: req.user ? req.user.username : ''
     });
 });
