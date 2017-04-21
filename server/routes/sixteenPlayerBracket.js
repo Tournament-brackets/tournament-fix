@@ -8,7 +8,7 @@ let mongoose = require('mongoose');
 let UserModel = require('../models/users');
 let User = UserModel.User; // alias for User
 
-let tournament = require('../models/eightPlayer');
+let tournament = require('../models/sixteenPlayer');
 
 //check if authenticated
 function requireAuth(req, res, next) {
@@ -20,7 +20,7 @@ function requireAuth(req, res, next) {
 
 router.get('/', (req, res, next) => {
     res.render('content/bracket8', {
-        title: 'Tournamen Bracket',
+        title: 'Tournament Bracket',
         username: req.user ? req.user.username : '',
         Tourney: newTourney   
     });
@@ -37,7 +37,7 @@ router.get('/tourney', requireAuth, (req, res, next) => {
 /* GET tourney page. */
 router.get('/eightman', requireAuth, (req, res, next) => {
     res.render('content/eightman', {
-        title: '8 player Tournament',
+        title: '16 player Tournament',
         username: req.user ? req.user.username : ''
     });
 });
