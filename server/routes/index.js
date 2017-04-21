@@ -13,7 +13,8 @@ let UserModel = require('../models/users');
 let User = UserModel.User; //aliase for User Model - User Object
 
 // define the contact model
-let contact = require('../models/contacts');
+let contact = require('../models/8players');
+let contact = require('../models/16players');
 
 // Create a function to check if the user is authenticated
 function requireAuth(req, res, next) {
