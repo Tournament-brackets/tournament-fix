@@ -36,7 +36,7 @@ router.get('/register', (req, res, next) =>{
   // check if the user is not already logged in
   if(!req.user) {
     // render the registration page
-    res.render('user/register', {
+    res.render('auth/register', {
       title: 'Register',
       messages: req.flash('registerMessage'),
       username: req.user ? req.user.username : ''

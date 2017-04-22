@@ -61,7 +61,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', index);
-app.use('/user', user);
+app.use('/', user);
 app.use('/eightPlayerBracket', bracket);
 app.use('/sixteenPlayerBracket', bracket8);
 
