@@ -1,7 +1,5 @@
 // app.js
 // Benzir Ahmed, Adil Hussain, Nitin Rai, Kevin Luu
-// Portfolio Site
-// Assignment 2 Authentication
 // modules required for the project
 let express = require('express');
 let path = require('path');
@@ -33,8 +31,8 @@ db.once('open', () => {
 
 let index = require('./routes/index');
 let user = require('./routes/user');
-let bracket = require('./routes/bracket');
-let bracket8 = require('./routes/bracket8');
+let bracket = require('./routes/eightPlayerBracket');
+let bracket8 = require('./routes/sixteenPlayerBracket');
 
 let app = express();
 
@@ -64,8 +62,8 @@ app.use(passport.session());
 
 app.use('/', index);
 app.use('/user', user);
-app.use('/bracket', bracket);
-app.use('/bracket8', bracket8);
+app.use('/eightPlayerBracket', bracket);
+app.use('/sixteenPlayerBracket', bracket8);
 
 // passport user config
 let UserModel = require('./models/users');
