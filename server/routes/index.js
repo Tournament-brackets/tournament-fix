@@ -13,8 +13,8 @@ let UserModel = require('../models/users');
 let User = UserModel.User; //aliase for User Model - User Object
 
 // define the contact model
-let contact = require('../models/8players');
-let contact = require('../models/16players');
+let contact = require('../models/eightPlayer');
+let contact1 = require('../models/sixteenPlayer');
 
 // Create a function to check if the user is authenticated
 function requireAuth(req, res, next) {
@@ -63,7 +63,7 @@ router.get('/login', (req, res, next) => {
 
 // POST /Login - process the Login attempt
 router.post('/login', passport.authenticate('local', {
-	successRedirect: '/contacts',
+	successRedirect: '/content',
 	failureRedirect: '/login',
 	failureFlash: "Incorrect Username/Password", // match the loginMessage above
 }));
