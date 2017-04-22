@@ -13,7 +13,7 @@ router.get('/login', (req, res, next) => {
   // check to see  if the user is not already logged index
   if(!req.user) {
     // render the login page
-    res.render('user/login', {
+    res.render('auth/login', {
       title: 'Login',
       messages: req.flash('loginMessage'),
       username: req.user ? req.user.username : ''
@@ -27,7 +27,7 @@ router.get('/login', (req, res, next) => {
 // POST /login - process the login page
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/user/login',
+  failureRedirect: '/auth/login',
   failureFlash: true
 }));
 
