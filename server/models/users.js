@@ -1,27 +1,15 @@
-let mongoose = require("mongoose");
-let Schema = mongoose.Schema;
-let passportLocalMongoose = require("passport-local-mongoose");
+let express = require('express');
+let router = express.Router();
 
-let UserSchema = new Schema({
-  username: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'username is required'
-  },
-  email: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'email is required'
-  }
-},
-{
-  collection: "users"
+let passport = require('passport');
+let UserModel = require('../models/users');
+let User = UserModel.User;
+
+/* GET home page. */
+router.get('/', (req, res, next) => {
+  res.render('content/index', { 
+    title: 'Home',
+    username: req.user ? req.user.username : '' });
 });
 
-let options = ({missingPasswordError: "Wrong Password"});
-
-UserSchema.plugin(passportLocalMongoose, options);
-
-exports.User = mongoose.model('User', UserSchema);
+module.exports = router;

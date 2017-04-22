@@ -13,7 +13,7 @@ router.get('/login', (req, res, next) => {
   // check to see  if the user is not already logged index
   if(!req.user) {
     // render the login page
-    res.render('auth/login', {
+    res.render('user/login', {
       title: 'Login',
       messages: req.flash('loginMessage'),
       username: req.user ? req.user.username : ''
@@ -27,7 +27,7 @@ router.get('/login', (req, res, next) => {
 // POST /login - process the login page
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/auth/login',
+  failureRedirect: '/user/login',
   failureFlash: true
 }));
 
@@ -36,7 +36,7 @@ router.get('/register', (req, res, next) =>{
   // check if the user is not already logged in
   if(!req.user) {
     // render the registration page
-    res.render('auth/register', {
+    res.render('user/register', {
       title: 'Register',
       messages: req.flash('registerMessage'),
       username: req.user ? req.user.username : ''
@@ -60,7 +60,7 @@ router.post('/register', (req, res, next) => {
           if(err.name == 'UserExistsError') {
             req.flash('registerMessage', 'Registration Error: User Already Exists!');
           }
-          return res.render('auth/register', {
+          return res.render('user/register', {
             title: 'Register',
             messages: req.flash('registerMessage'),
             username: req.user ? req.user.username : ''
