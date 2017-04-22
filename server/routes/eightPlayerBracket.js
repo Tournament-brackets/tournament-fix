@@ -1,5 +1,3 @@
-
-
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -19,31 +17,31 @@ function requireAuth(req, res, next) {
 }
 
 router.get('/', (req, res, next) => {
-    res.render('content/bracket8', {
-        title: 'Tournamen Bracket',
+    res.render('content/eightPlayerBracket', {
+        title: 'Tournament Bracket',
         username: req.user ? req.user.username : '',
         Tourney: newTourney   
     });
 })
 
 /* GET tourney page. */
-router.get('/tourney', requireAuth, (req, res, next) => {
-    res.render('content/tourney', {
-        title: 'Tourney',
+router.get('/tournamentlist', requireAuth, (req, res, next) => {
+    res.render('content/tournamentlist', {
+        title: 'Tournament List',
         username: req.user ? req.user.username : ''
     });
 });
 
 /* GET tourney page. */
-router.get('/eightman', requireAuth, (req, res, next) => {
-    res.render('content/eightman', {
+router.get('/eightPlayer', requireAuth, (req, res, next) => {
+    res.render('content/eightPlayer', {
         title: '8 player Tournament',
         username: req.user ? req.user.username : ''
     });
 });
 
 /* POST Tourney Page - Process the tourney page */
-router.post('/eightman', requireAuth, (req, res, next) => {
+router.post('/eightPlayer', requireAuth, (req, res, next) => {
     let object = {
         'rounds': [{
             'round1': [{
@@ -108,11 +106,12 @@ router.post('/eightman', requireAuth, (req, res, next) => {
                     }
                 ]
             }],
-            'winner1': req.body.player1, 'status': req.body.status, 'title': req.body.eightManTitle
+            //'winner1': req.body.player1, 'status': req.body.status, 'title': req.body.eightManTitle
         }],
         userID: String
     }
     
+    // new tournament
     let newtournament = tournament(object)
     
 
@@ -121,7 +120,7 @@ router.post('/eightman', requireAuth, (req, res, next) => {
         if (err) {
             res.end(err);
         } else {
-            res.redirect('/bracket8/' + tournament._id);
+            res.redirect('/eightPlayerBracket/' + tournament._id);
         }
     })
 });
@@ -143,7 +142,7 @@ router.get('/:id', requireAuth, (req, res, next) => {
                 res.end(error);
             } else {
                 // show the game details view
-                res.render('content/bracket8', {
+                res.render('content/eightPlayerBracket', {
                     title: 'Tournament Bracket',
                     username: req.user ? req.user.username : '',
                     tournament: newtournament,
@@ -178,7 +177,7 @@ router.post('/:id', requireAuth, (req, res, next) => {
                         res.end(err);
                     }
                     else{
-                        res.redirect('/bracket/'+ newtournament._id);
+                        res.redirect('/eightPlayerBracket/'+ newtournament._id);
                     }
                 })   
             }

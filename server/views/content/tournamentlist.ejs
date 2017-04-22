@@ -1,0 +1,105 @@
+<% include ../partials/header.ejs %>
+        
+        <div class="panel-body">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            
+            <h4>TOURNAMENT SETUP</h4>
+
+<!-- Number of Player box Start -->
+<form>
+  <div class="well carousel-search hidden-phone">
+    <div class="btn-group">
+      <a class="btn dropdown-toggle btn-select" data-toggle="dropdown" href="#">SELECT NUMBER OF PLAYERS <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="/bracket/fourman">4 MAN TOURNAMENT</a></li>
+        <li><a href="/bracket8/eightman">8 MAN TOURNAMENT</a></li>
+      </ul>
+      <span id="spanTest" style="display: none">
+      <button type="button" id="btnTest" class="btn btn-primary">TEST</button>
+      </span>
+  </div>
+  </div>
+</form>
+<!-- Number of Player box End -->
+          
+
+<!-- Enter 4 Player Start -->
+<form method = "post" class = "form" style="display:none" id="fourManForm">
+  <h4>ENTER PLAYERS</h4>
+  <div class="well carousel-search hidden-phone">
+    <div class="btn-group">
+        <a href="#"></a>ENTER PLAYER 1: <input type="text" class="form-control" name="player1" placeholder="player1" name="player1" required>
+        <a href="#"></a>ENTER PLAYER 2: <input type="text" class="form-control" name="player2" placeholder="player2" name="player2" required>
+        <a href="#"></a>ENTER PLAYER 3: <input type="text" class="form-control" name="player3" placeholder="player3" name="player3" required>
+        <a href="#"></a>ENTER PLAYER 4: <input type="text" class="form-control" name="player4" placeholder="player4" name="player4" required>
+      </br>
+              
+             <button type="submit" class="btn btn-primary"> Submit </button>
+            <a href="/" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+
+  </div>
+  </div>
+</form>
+<!-- Enter 4 Player End -->
+
+<!-- Enter 8 Player Start -->
+<form method = "post" class = "form" style="display:none" id="eightManForm">
+  <h4>ENTER PLAYERS</h4>
+  <div class="well carousel-search hidden-phone">
+    <div class="btn-group">
+        <a href="#"></a>ENTER PLAYER 1: <input type="text" class = "form-control" id="player1" placeholder="player1" name = "player1" required></input>
+        <a href="#"></a>ENTER PLAYER 2: <input type="text" class = "form-control" id="player2" placeholder="player2" name = "player2" required></input>
+        <a href="#"></a>ENTER PLAYER 3: <input type="text" class = "form-control" id="player3" placeholder="player3" name = "player3" required></input>
+        <a href="#"></a>ENTER PLAYER 4: <input type="text" class = "form-control" id="player4" placeholder="player4" name = "player4" required></input>
+        <a href="#"></a>ENTER PLAYER 5: <input type="text" class = "form-control" id="player5" placeholder="player5" name = "player5" required></input>
+        <a href="#"></a>ENTER PLAYER 6: <input type="text" class = "form-control" id="player6" placeholder="player6" name = "player6" required></input>
+        <a href="#"></a>ENTER PLAYER 7: <input type="text" class = "form-control" id="player7" placeholder="player7" name = "player7" required></input>
+        <a href="#"></a>ENTER PLAYER 8: <input type="text" class = "form-control" id="player8" placeholder="player8" name = "player8" required></input>
+      </br>
+            <button type="submit" class="btn btn-primary"> Submit </button>
+            <a href="/" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+  </div>
+  </div>
+</form>
+<!-- Enter 8 Player End -->
+
+</div>
+</div>
+
+
+<script>
+ $(".dropdown-menu li a").click(function(){
+  let selText = $(this).text();
+  $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+  //badge element visible
+  if(selText == "4 MAN TOURNAMENT")
+  {
+
+    let y = document.getElementById('eightManForm');
+      y.style.display = 'none';
+
+  let x = document.getElementById('fourManForm');
+    if (x.style.display === 'none') {
+        x.style.display = 'inline';
+    } else {
+        x.style.display = 'inline';
+    }
+  }
+  if(selText == "8 MAN TOURNAMENT")
+  {
+    let z = document.getElementById('fourManForm');
+      z.style.display = 'none';
+
+  let y = document.getElementById('eightManForm');
+    if (y.style.display === 'none') {
+        y.style.display = 'inline';
+    } else {
+        y.style.display = 'inline';
+    }
+  }
+});
+
+</script>
+
+<% include ../partials/footer.ejs %> 
